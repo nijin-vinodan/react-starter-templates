@@ -1,4 +1,4 @@
-# React Starter Pack 
+# React Starter Pack (Plain JS & SCSS)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### Additional Add-Ons in this Starter Pack
