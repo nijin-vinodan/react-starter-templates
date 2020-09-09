@@ -39,11 +39,11 @@ Boom! SCSS has been set up in the project directory.
 
 ### Step 4: Set up ESLint
 
-With ESLint, we could enforce some guidelines in our project and avoid common pitfalls. Let’s install ESLint and ESLint Plugin React to our project first.
+With ESLint, we could enforce some guidelines in our project and avoid common pitfalls. Let’s install ESLint and ESLint Plugin React to our project first. 
 
-### `npm install eslint eslint-plugin-react --save-dev`
+### `npm install eslint eslint-plugin-react @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev`
 
-Create a .eslintrc file at the project root and then we can run ESLint on any files.
+Create a .eslintrc file at the project root and set the configurations.
 
 ###
 
@@ -55,24 +55,38 @@ Create a .eslintrc file at the project root and then we can run ESLint on any fi
             "es6": true
         },
         "plugins": [
-            "import"
+            "import",
+            "react",
+            "@typescript-eslint"
         ],
         "extends": [
-            "eslint:recommended",
-            "plugin:react/recommended"
+            "plugin:react/recommended",
+            "plugin:@typescript-eslint/recommended"
         ],
         "parserOptions": {
-            "ecmaVersion": 2018,
+            "ecmaVersion": 2020,
             "ecmaFeatures": {
                 "jsx": true
             },
-            "sourceType": "module"
+            "sourceType": "module",
+            "project": "./tsconfig.json"
         },
         "settings": {
             "react": {
                 "version": "detect"
             }
         },
+        "overrides": [
+            {
+                "files": [
+                    "serviceWorker.ts"
+                ],
+                "rules": {
+                    "no-console": "off",
+                    "@typescript-eslint/explicit-module-boundary-types": "off"
+                }
+            }
+        ],
         "rules": {
             "no-console": "warn",
             "no-eval": "error",
@@ -81,6 +95,14 @@ Create a .eslintrc file at the project root and then we can run ESLint on any fi
     }
 
 You can view the entire list of configurations <a href = "https://eslint.org/docs/user-guide/configuring">here</a>
+
+Create another file called .eslintignore at the project root. We could mention the list of directories or files which needs to be skipped by ESLint.
+###
+    # don't ever lint node_modules
+    node_modules
+    # don't lint build output (make sure it's set to your correct build folder name)
+    dist
+
 
 Add the following to package.json along with other scripts.
 
@@ -116,7 +138,7 @@ Let’s also set up Prettier CLI which will format our code based on the options
 
     {
         "scripts": {
-            "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
+            "format": "prettier --write \"**/*.+(ts|tsx|js|jsx|json|css|md)\""
         }
     }
 
@@ -148,7 +170,7 @@ Insert the following code in your package.json.
     {
         "husky": {
             "hooks": {
-                "pre-commit": "npm run lint && npm run format"
+                "pre-commit": "npm run lint:fix && npm run format"
             }
         }
     }
