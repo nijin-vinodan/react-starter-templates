@@ -5,26 +5,40 @@
         "jest": true,
         "es6": true
     },
+    "parser": "@typescript-eslint/parser",
     "plugins": [
-        "import"
+        "import",
+        "react",
+        "@typescript-eslint"
     ],
     "extends": [
-        "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:prettier/recommended"
+        "plugin:@typescript-eslint/recommended"
     ],
     "parserOptions": {
-        "ecmaVersion": 2018,
+        "ecmaVersion": 2020,
         "ecmaFeatures": {
             "jsx": true
         },
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
     "settings": {
         "react": {
             "version": "detect"
         }
     },
+    "overrides": [
+        {
+            "files": [
+                "serviceWorker.ts"
+            ],
+            "rules": {
+                "no-console": "off",
+                "@typescript-eslint/explicit-module-boundary-types": "off"
+            }
+        }
+    ],
     "rules": {
         "no-console": "warn",
         "no-eval": "error",

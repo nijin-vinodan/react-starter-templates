@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
+    "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -20,9 +20,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
+    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
+    "lint:fix": "eslint --fix src/**/*.ts{,x}",
+    "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|css|md)\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,7 +46,9 @@
     "eslint-plugin-react": "^7.20.6",
     "husky": "^4.2.5",
     "node-sass": "^4.14.1",
-    "prettier": "^2.1.1"
+    "prettier": "^2.1.1",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0"
   },
   "husky": {
     "hooks": {
