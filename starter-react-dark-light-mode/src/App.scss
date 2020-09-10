@@ -1,0 +1,10 @@
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--theme-page-background);
+  color: var(--theme-page-text);
+}

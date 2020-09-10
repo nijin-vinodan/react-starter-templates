@@ -1,0 +1,12 @@
+button {
+    height: 2.5rem;
+    padding: 0.625rem 1rem;
+    border: 0;
+    background-color: var(--theme-color);
+    color: #FFF;
+    cursor: pointer;
+
+    &:focus {
+        outline: 0;
+    }
+}
