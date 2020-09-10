@@ -20,7 +20,7 @@ Let’s navigate to our codebase folder and create the project using “create-r
 
 ### Step 2 : Set Up SCSS
 Let’s install node-sass first.
-### `npm create-react-app app-name`
+### `npm i node-sass`
 Boom! SCSS has been set up in the project directory.
 1. Convert existing .css files (App.css and index.css) to .scss files.
 2. Change any imports to use .scss.

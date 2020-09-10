@@ -30,7 +30,7 @@ Let’s navigate to our codebase folder and create the project using “create-r
 
 Let’s install node-sass first.
 
-### `npm create-react-app app-name`
+### `npm i node-sass`
 
 Boom! SCSS has been set up in the project directory.
 
@@ -97,6 +97,7 @@ Create a .eslintrc file at the project root and set the configurations.
 You can view the entire list of configurations <a href = "https://eslint.org/docs/user-guide/configuring">here</a>
 
 Create another file called .eslintignore at the project root. We could mention the list of directories or files which needs to be skipped by ESLint.
+
 ###
     # don't ever lint node_modules
     node_modules
