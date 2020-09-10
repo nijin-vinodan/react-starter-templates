@@ -39,7 +39,7 @@ Boom! SCSS has been set up in the project directory.
 
 ### Step 4: Set up ESLint
 
-With ESLint, we could enforce some guidelines in our project and avoid common pitfalls. Let’s install ESLint and ESLint Plugin React to our project first. 
+With ESLint, we could enforce some guidelines in our project and avoid common pitfalls. Let’s install ESLint and ESLint Plugin React to our project first.
 
 ### `npm install eslint eslint-plugin-react @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev`
 
@@ -99,11 +99,11 @@ You can view the entire list of configurations <a href = "https://eslint.org/doc
 Create another file called .eslintignore at the project root. We could mention the list of directories or files which needs to be skipped by ESLint.
 
 ###
+
     # don't ever lint node_modules
     node_modules
     # don't lint build output (make sure it's set to your correct build folder name)
     dist
-
 
 Add the following to package.json along with other scripts.
 
