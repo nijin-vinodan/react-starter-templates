@@ -111,8 +111,8 @@ Add the following to package.json along with other scripts.
 
     {
         "scripts": {
-            "lint": "eslint .",
-            "lint:fix": "eslint --fix ."
+            "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
+            "lint:fix": "eslint --fix src/**/*.ts{,x}"
         }
     }
 
